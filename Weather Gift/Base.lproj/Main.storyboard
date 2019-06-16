@@ -133,7 +133,11 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UfL-Xg-fkf">
                                 <rect key="frame" x="0.0" y="847" width="414" height="49"/>
                                 <items>
-                                    <barButtonItem title="Edit" id="T6h-83-lEv"/>
+                                    <barButtonItem title="Edit" id="T6h-83-lEv">
+                                        <connections>
+                                            <action selector="editBarButtonPressed:" destination="6uH-ip-The" id="QLO-SK-1Dc"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="HXX-Nb-K1V"/>
                                     <barButtonItem systemItem="add" id="D21-Vb-pbc"/>
                                 </items>
@@ -152,6 +156,8 @@
                         <viewLayoutGuide key="safeArea" id="nXV-TZ-X3J"/>
                     </view>
                     <connections>
+                        <outlet property="addBarButton" destination="D21-Vb-pbc" id="Z1r-zP-d0h"/>
+                        <outlet property="editBarButton" destination="T6h-83-lEv" id="tg8-dK-HRv"/>
                         <outlet property="tableView" destination="p3n-Je-4hg" id="ftt-NM-rOZ"/>
                     </connections>
                 </viewController>
