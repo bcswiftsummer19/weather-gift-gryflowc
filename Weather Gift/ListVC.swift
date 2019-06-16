@@ -20,7 +20,15 @@ class ListVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToPageVC" {
+            let destination = segue.destination as! PageVC
+            currentPage = (tableView.indexPathForSelectedRow?.row)!
+            destination.currentPage = currentPage
+            destination.locationsArray = locationsArray
+        }
+    }
 }
 
 extension ListVC: UITableViewDelegate, UITableViewDataSource {
