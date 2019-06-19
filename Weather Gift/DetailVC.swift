@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class DetailVC: UIViewController {
 
@@ -17,16 +18,25 @@ class DetailVC: UIViewController {
     @IBOutlet weak var tempLabel: UILabel!
     
     var currentPage = 0
-    var locationsArray = [String]()
+    var locationsArray = [WeatherLocation]()
+    var locationManager: CLLocationManager!
+    var currentLocation: CLLocation!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationLabel.text = locationsArray[currentPage]
+        locationLabel.text = locationsArray[currentPage].name
+        dateLabel.text = locationsArray[currentPage].coordinates
+    }
+}
+
+extension DetailVC: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        <#code#>
     }
     
-    
-    
-
-
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Failed to get user location.")
+    }
 }

@@ -139,7 +139,11 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="HXX-Nb-K1V"/>
-                                    <barButtonItem systemItem="add" id="D21-Vb-pbc"/>
+                                    <barButtonItem systemItem="add" id="D21-Vb-pbc">
+                                        <connections>
+                                            <action selector="addBarButtonPressed:" destination="6uH-ip-The" id="Eu6-fd-MpG"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
